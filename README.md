@@ -61,9 +61,8 @@ key | optional | type | default | description
 `class` | False | string | | `CheckConfig`
 
 ## Screenshots
-<table><tr><td>
-<img src="https://raw.githubusercontent.com/apop880/config-check/master/lovelace-example.png" width=200>
-<img src="https://raw.githubusercontent.com/apop880/config-check/master/result-error.png" width=200></td></tr></table>
+<img src="https://raw.githubusercontent.com/apop880/config-check/master/lovelace-example.png">
+<img src="https://raw.githubusercontent.com/apop880/config-check/master/result-error.png">
 
 ## Issues/Feature Requests
 
