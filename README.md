@@ -3,7 +3,7 @@
 <a href="https://www.buymeacoffee.com/uMhxJCzPS" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 _Allows you to check your Home Assistant configuration from within Lovelace.
-Outputs the results to a sensor and will automatically restart HASS if
+Outputs the results to a sensor and can automatically restart HASS if
 configuration is valid._
 
 ## Installation
@@ -35,7 +35,8 @@ The app will auto-generate an entity called `sensor.config_result`. It has an
 initial value of `-` until a configuration check is actually run. After running
 a check, it will change to `valid` or `invalid`. If it is invalid, the `detail`
 attribute on the sensor will include additional data about the specific failure.
-If it is valid, Home Assistant will restart automatically.
+If it is valid, Home Assistant will restart automatically, or you can configure
+it to not restart until you do so manually.
 
 The following is a basic example of a Lovelace example to run the check and show
 the results.
@@ -62,10 +63,91 @@ key | optional | type | default | description
 -- | -- | -- | -- | --
 `module` | False | string | | `checkconfig`
 `class` | False | string | | `CheckConfig`
+`restart` | True | boolean | True | By default, Home Assistant will be restarted if the configuration is valid. Setting this to false will allow you to restart at the time of your choosing.
 
 ## Screenshots
 <img src="https://raw.githubusercontent.com/apop880/config-check/master/lovelace-example.png">
-<img src="https://raw.githubusercontent.com/apop880/config-check/master/result-error.png">
+<img
+src="https://raw.githubusercontent.com/apop880/config-check/master/result-error.png">
+
+## Advanced Lovelace Config Examples
+
+As a picture elements card with options to reload elements of your
+configuration, or a full restart:
+```yaml
+type: custom:vertical-stack-in-card
+cards:
+  - type: picture-elements
+    image: /local/images/BG_blank_slim.png
+    elements:
+
+      - type: image
+        image: /local/images/icons8-administrative-tools-80.png
+        tap_action:
+          action: call-service
+          service: script.check_config
+        style:
+          top: 50%
+          left: 10%
+          width: 10%
+
+      - type: image
+        image: /local/images/icons8-restart-80.png
+        tap_action:
+          action: call-service
+          service: homeassistant.restart
+        style:
+          top: 50%
+          left: 26%
+          width: 10%
+
+      - type: image
+        image: /local/images/icons8-source-code-80.png
+        tap_action:
+          action: call-service
+          service: homeassistant.reload_core_config
+        style:
+          top: 50%
+          left: 42%
+          width: 10%
+
+      - type: image
+        image: /local/images/icons8-variation-80.png
+        tap_action:
+          action: call-service
+          service: group.reload
+        style:
+          top: 50%
+          left: 58%
+          width: 10%
+            
+      - type: image
+        image: /local/images/icons8-automation-80.png
+        tap_action:
+          action: call-service
+          service: automation.reload
+        style:
+          top: 50%
+          left: 74%
+          width: 10%
+
+      - type: image
+        image: /local/images/icons8-note-80.png
+        tap_action:
+          action: call-service
+          service: script.reload
+        style:
+          top: 50%
+          left: 90%
+          width: 10%
+
+
+  - type: entities
+    show_header_toggle: false
+    entities:
+      - sensor.config_result
+```
+<img src="https://raw.githubusercontent.com/apop880/config-check/master/picture-elements-example.jpeg">
 
 ## Issues/Feature Requests
 

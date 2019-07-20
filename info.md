@@ -16,6 +16,7 @@ key | optional | type | default | description
 -- | -- | -- | -- | --
 `module` | False | string | | `checkconfig`
 `class` | False | string | | `CheckConfig`
+`restart` | True | boolean | True | By default, Home Assistant will be restarted if the configuration is valid. Setting this to false will allow you to restart at the time of your choosing.
 
 ## `Scripts.yaml` Configuration
 

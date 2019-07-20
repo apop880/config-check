@@ -7,6 +7,12 @@ import json
 class CheckConfig(hass.Hass):
 
 	def initialize(self):
+		# is auto-restart set?
+		if "restart" in self.args and self.args["restart"] == False:
+			self.restart = False
+		else:
+			self.restart = True
+
 		# create a sensor to track check result
 		self.set_state("sensor.config_result", state="-", attributes = {"friendly_name": "Config Result", "detail": None})
 		
@@ -35,6 +41,8 @@ class CheckConfig(hass.Hass):
 		# evaluate result
 		if json.loads(r.text)['result'] == "valid":
 			self.set_state("sensor.config_result", state="valid", attributes = {"detail": None})
-			self.call_service("homeassistant/restart")
+			# restart if auto-restart is on
+			if self.restart == True:
+				self.call_service("homeassistant/restart")
 		else:
 			self.set_state("sensor.config_result", state="invalid", attributes = {"detail": json.loads(r.text)['errors']})
