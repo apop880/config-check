@@ -10,7 +10,9 @@ configuration is valid._
 
 This app is best installed using
 [HACS](https://github.com/custom-components/hacs), so that you can easily track
-and download updates.
+and download updates. Currently, the repository must be added manually on the
+Settings page. Once the app moves out of pre-release status, I will submit it to
+the default list.
 
 Alternatively, you can download the `check-config` directory from inside the `apps` directory here to your
 local `apps` directory, then add the configuration to enable the `checkconfig`
@@ -49,6 +51,7 @@ entities:
 
 ## App configuration
 
+Add the following to your `apps.yaml` file:
 ```yaml
 check_config:
   module: checkconfig

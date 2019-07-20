@@ -5,6 +5,7 @@ few lines to `scripts.yaml` and your Lovelace configuration.*
 
 ## App Configuration
 
+Add the following to your `apps.yaml` file:
 ```yaml
 check_config:
   module: checkconfig
