@@ -50,7 +50,7 @@ entities:
 ## App configuration
 
 ```yaml
-night_mode:
+check_config:
   module: checkconfig
   class: CheckConfig
 ```
@@ -62,8 +62,8 @@ key | optional | type | default | description
 
 ## Screenshots
 <table><tr><td>
-<img src="https://raw.githubusercontent.com/apop880/check-config/master/lovelace-example.jpg" width=200>
-<img src="https://raw.githubusercontent.com/apop880/check-config/master/result-error.jpg" width=200></td></tr></table>
+<img src="https://raw.githubusercontent.com/apop880/config-check/master/lovelace-example.png" width=200>
+<img src="https://raw.githubusercontent.com/apop880/config-check/master/result-error.png" width=200></td></tr></table>
 
 ## Issues/Feature Requests
 

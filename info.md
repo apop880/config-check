@@ -6,7 +6,7 @@ few lines to `scripts.yaml` and your Lovelace configuration.*
 ## App Configuration
 
 ```yaml
-night_mode:
+check_config:
   module: checkconfig
   class: CheckConfig
 ```
