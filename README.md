@@ -1,6 +1,13 @@
 # Check Config
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
-<a href="https://www.buymeacoffee.com/uMhxJCzPS" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a href="https://www.buymeacoffee.com/uMhxJCzPS" target="_blank"><img
+src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
+alt="Buy Me A Coffee" style="height: 41px !important;width: 174px
+!important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5)
+!important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5)
+!important;" ></a>
+
+### Requires AppDaemon
 
 _Allows you to check your Home Assistant configuration from within Lovelace, or
 automatically using when configuration.yaml is updated.
