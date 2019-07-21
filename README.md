@@ -64,8 +64,30 @@ key | optional | type | default | description
 `module` | False | string | | `checkconfig`
 `class` | False | string | | `CheckConfig`
 `restart` | True | boolean | True | By default, Home Assistant will be restarted if the configuration is valid. Setting this to false will allow you to restart at the time of your choosing.
+`folder_watcher` | True | boolean | False | If you are using the `folder_watcher` component (see "Using with Folder Watcher" below), the app can automatically monitor for changes to `configuration.yaml` and run the check any time the file is changed.
 
-## Screenshots
+## Using with Folder Watcher
+
+As of version 0.3.0, the [Folder
+Watcher](https://www.home-assistant.io/components/folder_watcher/) component can
+be integrated into this app. The app will then automatically trigger a
+configuration check when your `configuration.yaml` file is updated. You can then
+either have Home Assistant restart automatically, or continue to utilize the
+sensor updating as you see fit. For example, I have Telegram set up on the
+computer I perform my configuration updates on. So, I now receive a notification
+from Telegram on my desktop seconds after saving a change to
+`configuration.yaml`. If the config is invalid, the specific issue is called out
+in the notification. Otherwise, if it's valid, I have an inline keyboard button
+that will restart Home Assistant when pressed.
+
+The example code for this notification setup is included in `confignotifyexample.py` in
+this repository. Since everyone's notification setup is different, I am not
+attempting to include it in the main app at this time, but you are free to use
+what I have created as a starting point.
+
+<img src="https://raw.githubusercontent.com/apop880/config-check/master/telegram.png">
+
+## Example Screenshots
 <img src="https://raw.githubusercontent.com/apop880/config-check/master/lovelace-example.png">
 <img
 src="https://raw.githubusercontent.com/apop880/config-check/master/result-error.png">

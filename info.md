@@ -17,6 +17,7 @@ key | optional | type | default | description
 `module` | False | string | | `checkconfig`
 `class` | False | string | | `CheckConfig`
 `restart` | True | boolean | True | By default, Home Assistant will be restarted if the configuration is valid. Setting this to false will allow you to restart at the time of your choosing.
+`folder_watcher` | True | boolean | False | If you are using the `folder_watcher` component (see "Using with Folder Watcher" in the README), the app can automatically monitor for changes to `configuration.yaml` and run the check any time the file is changed.
 
 ## `Scripts.yaml` Configuration
 
