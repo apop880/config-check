@@ -80,12 +80,30 @@ from Telegram on my desktop seconds after saving a change to
 in the notification. Otherwise, if it's valid, I have an inline keyboard button
 that will restart Home Assistant when pressed.
 
-The example code for this notification setup is included in `confignotifyexample.py` in
+The example code for this notification setup is included in `confignotify.py` in
 this repository. Since everyone's notification setup is different, I am not
 attempting to include it in the main app at this time, but you are free to use
 what I have created as a starting point.
 
-<img src="https://raw.githubusercontent.com/apop880/config-check/master/telegram.png">
+<img
+src="https://raw.githubusercontent.com/apop880/config-check/master/telegram.png">
+
+Here is the YAML I'm using to include `folder_watcher` in my setup to monitor
+`configuration.yaml`:
+```yaml
+folder_watcher:
+  - folder: /config
+    patterns:
+      - '*.yaml'
+```
+
+You also need your `config` directory under `whitelist_external_dirs` in the
+`homeassistant` section of `configuration.yaml`:
+```yaml
+homeassistant:
+  whitelist_external_dirs:
+    - /config
+```
 
 ## Example Screenshots
 <img src="https://raw.githubusercontent.com/apop880/config-check/master/lovelace-example.png">
