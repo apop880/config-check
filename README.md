@@ -77,6 +77,7 @@ entities:
 ```
 
 ## Using with Folder Watcher
+_Note: Folder Watcher support currently does not support split configuration files, nor will it monitor changes to secrets.yaml. Support for secrets.yaml and split configurations is planned for the next release. In addition, when using the Folder Watcher configuration, the Lovelace script configuration above will no longer work (but the sensor will still update for you to optionally display in Lovelace)._
 
 As of version 0.3.0, the [Folder
 Watcher](https://www.home-assistant.io/components/folder_watcher/) component can
