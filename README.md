@@ -18,9 +18,7 @@ configuration is valid._
 
 This app is best installed using
 [HACS](https://github.com/custom-components/hacs), so that you can easily track
-and download updates. Currently, the repository must be added manually on the
-Settings page. Once the app moves out of pre-release status, I will submit it to
-the default list.
+and download updates.
 
 Alternatively, you can download the `check-config` directory from inside the `apps` directory here to your
 local `apps` directory, then add the configuration to enable the `checkconfig`
@@ -77,6 +75,7 @@ entities:
 ```
 
 ## Using with Folder Watcher
+_Note: Folder Watcher support currently does not support split configuration files, nor will it monitor changes to secrets.yaml. Support for secrets.yaml and split configurations is planned for the next release. In addition, when using the Folder Watcher configuration, the Lovelace script configuration above will no longer work (but the sensor will still update for you to optionally display in Lovelace)._
 
 As of version 0.3.0, the [Folder
 Watcher](https://www.home-assistant.io/components/folder_watcher/) component can
